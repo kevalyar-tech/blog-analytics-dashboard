@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Analytics Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js" defer></script>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h1>Blog Analytics Dashboard</h1>
+
+    <div class="cards">
+        <div class="card">
+            <img src="images/analytics_dashboard.png" onclick="alert('Top Performing Blog!')">
+            <h3>Total Visits</h3>
+            <p>12,450</p>
+        </div>
+
+        <div class="card">
+            <img src="images/business_analytics.jpg" onclick="alert('Most Viewed Page!')">
+            <h3>Unique Visitors</h3>
+            <p>6,820</p>
+        </div>
+
+        <div class="card">
+            <img src="images/dataanalytics_laptop.jpg" onclick="alert('Engagement Insights')">
+            <h3>Bounce Rate</h3>
+            <p>42%</p>
+        </div>
+    </div>
+
+    <h2>Detailed Analytics (100 Records)</h2>
+
+    <table id="dataTable">
+        <tr>
+            <th>ID</th>
+            <th>Page</th>
+            <th>Views</th>
+            <th>Visitors</th>
+            <th>Bounce Rate</th>
+        </tr>
+    </table>
+</div>
+
+<footer>© 2026 Blog Analytics Project</footer>
+
+<script>
+    const table = document.getElementById("dataTable");
+    analyticsData.forEach(row => {
+        table.innerHTML += `
+            <tr>
+                <td>${row.id}</td>
+                <td>${row.page}</td>
+                <td>${row.views}</td>
+                <td>${row.visitors}</td>
+                <td>${row.bounce}</td>
+            </tr>`;
+    });
+</script>
+
+</body>
+</html>
